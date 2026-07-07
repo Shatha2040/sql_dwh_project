@@ -39,18 +39,21 @@ The **Customer Dimension** stores descriptive information about customers. It pr
 
 ## Columns
 
-| Column Name | Data Type | Key Type | Description |
-|-------------|-----------|----------|-------------|
-| **customer_key** | INT | Primary Key (Surrogate Key) | A system-generated surrogate key that uniquely identifies each customer record within the data warehouse. It is used to establish relationships with the fact table and has no business meaning. |
-| **customer_id** | INT | Business Key | The original customer identifier obtained from the CRM source system. It uniquely identifies a customer in the operational system. |
-| **customer_number** | NVARCHAR(50) | Business Attribute | A business reference number assigned to the customer for operational tracking and identification purposes. |
-| **first_name** | NVARCHAR(50) | Business Attribute | The customer's first name. |
-| **last_name** | NVARCHAR(50) | Business Attribute | The customer's family or last name. |
-| **country** | NVARCHAR(50) | Business Attribute | The country where the customer resides after data standardization. |
-| **marital_status** | NVARCHAR(50) | Business Attribute | The customer's marital status after cleansing and standardization (e.g., Married, Single). |
-| **gender** | NVARCHAR(50) | Business Attribute | The customer's gender after mapping inconsistent source values into standardized values. |
-| **birthdate** | DATE | Business Attribute | The customer's date of birth. Used for age and demographic analysis. |
-| **create_date** | DATE | Business Attribute | The date when the customer record was originally created in the source system. |
+
+| Column Name | Data Type | Key Type | Description | Example |
+|-------------|-----------|----------|-------------|---------|
+| customer_key | INT | Primary Key (Surrogate Key) | Surrogate key uniquely identifying each customer record in the dimension table. | - |
+| customer_id | INT | Business Key | Unique numerical identifier assigned to each customer. | 11000 |
+| customer_number | NVARCHAR(50) | Business Attribute | Alphanumeric identifier representing the customer, used for tracking and referencing. | AW00011000 |
+| first_name | NVARCHAR(50) | Attribute | The customer's first name, as recorded in the system. | John |
+| last_name | NVARCHAR(50) | Attribute | The customer's last name or family name. | Smith |
+| country | NVARCHAR(50) | Attribute | The country of residence for the customer (e.g., 'Australia'). | Australia |
+| marital_status | NVARCHAR(50) | Attribute | The marital status of the customer (e.g., 'Married', 'Single'). | Married |
+| gender | NVARCHAR(50) | Attribute | The gender of the customer (e.g., 'Male', 'Female', 'n/a'). | Female |
+| birthdate | DATE | Date Attribute | The date of birth of the customer, formatted as YYYY-MM-DD (e.g., 1971-10-06). | 1971-10-06 |
+| create_date | DATE | Date Attribute | The date and time when the customer record was created in the system. | 2012-03-25 |
+
+
 
 ---
 
@@ -89,19 +92,19 @@ The **Product Dimension** contains descriptive information about products, inclu
 
 ## Columns
 
-| Column Name | Data Type | Key Type | Description |
-|-------------|-----------|----------|-------------|
-| **product_key** | INT | Primary Key (Surrogate Key) | A warehouse-generated surrogate key uniquely identifying each product record. Used as the foreign key in the fact table. |
-| **product_id** | INT | Business Key | Original product identifier from the CRM system. |
-| **product_number** | NVARCHAR(50) | Business Attribute | Business product code used for inventory management and operational tracking. |
-| **product_name** | NVARCHAR(50) | Business Attribute | Descriptive product name including details such as model, size, or color. |
-| **category_id** | NVARCHAR(50) | Business Attribute | Identifier representing the product's main category. |
-| **category** | NVARCHAR(50) | Business Attribute | High-level product category such as Bikes, Components, Clothing, or Accessories. |
-| **subcategory** | NVARCHAR(50) | Business Attribute | Detailed classification of the product within its category. |
-| **maintenance_required** | NVARCHAR(50) | Business Attribute | Indicates whether the product requires regular maintenance (Yes or No). |
-| **cost** | INT | Measure Attribute | Standard manufacturing or purchasing cost of the product. |
-| **product_line** | NVARCHAR(50) | Business Attribute | Product line or collection to which the product belongs (e.g., Road, Mountain, Touring). |
-| **start_date** | DATE | Business Attribute | Date when the product became active or available for sale. |
+| Column Name | Data Type | Key Type | Description | Example |
+|-------------|-----------|----------|-------------|---------|
+| product_key | INT | Primary Key (Surrogate Key) | Surrogate key uniquely identifying each product record in the product dimension table. | - |
+| product_id | INT | Business Key | A unique identifier assigned to the product for internal tracking and referencing. | 310 |
+| product_number | NVARCHAR(50) | Business Attribute | A structured alphanumeric code representing the product, often used for categorization or inventory. | BK-M82B-42 |
+| product_name | NVARCHAR(50) | Attribute | Descriptive name of the product, including key details such as type, color, and size. | Mountain Bike Black 42 |
+| category_id | NVARCHAR(50) | Business Attribute | A unique identifier for the product's category, linking to its high-level classification. | BI |
+| category | NVARCHAR(50) | Attribute | The broader classification of the product (e.g., Bikes, Components) to group related items. | Bikes |
+| subcategory | NVARCHAR(50) | Attribute | A more detailed classification of the product within the category, such as product type. | Mountain Bikes |
+| maintenance_required | NVARCHAR(50) | Attribute | Indicates whether the product requires maintenance (e.g., 'Yes', 'No'). | Yes |
+| cost | INT | Measure Attribute | The cost or base price of the product, measured in monetary units. | 1250 |
+| product_line | NVARCHAR(50) | Attribute | The specific product line or series to which the product belongs (e.g., Road, Mountain). | Mountain |
+| start_date | DATE | Date Attribute | The date when the product became available for sale or use. | 2013-01-01 |
 
 ---
 
@@ -143,17 +146,17 @@ Each record represents **one product sold within one sales order (one order line
 
 ## Columns
 
-| Column Name | Data Type | Type | Description |
-|-------------|-----------|------|-------------|
-| **order_number** | NVARCHAR(50) | Degenerate Dimension | Unique identifier for the sales order. Stored directly in the fact table because it does not require a separate dimension table. |
-| **product_key** | INT | Foreign Key | Surrogate key referencing **gold_layer.dim_products**. |
-| **customer_key** | INT | Foreign Key | Surrogate key referencing **gold_layer.dim_customers**. |
-| **order_date** | DATE | Date Attribute | Date when the customer placed the order. |
-| **shipping_date** | DATE | Date Attribute | Date when the order was shipped. |
-| **due_date** | DATE | Date Attribute | Payment due date associated with the order. |
-| **sales_amount** | INT | Measure | Total sales amount for the order line. |
-| **quantity** | INT | Measure | Number of product units sold. |
-| **price** | INT | Measure | Selling price per unit of the product. |
+| Column Name | Data Type | Key Type | Description | Example |
+|-------------|-----------|----------|-------------|---------|
+| order_number | NVARCHAR(50) | Degenerate Dimension | A unique alphanumeric identifier for each sales order (e.g., 'SO54496'). | SO54496 |
+| product_key | INT | Foreign Key | Surrogate key linking the order to the product dimension table. | - |
+| customer_key | INT | Foreign Key | Surrogate key linking the order to the customer dimension table. | - |
+| order_date | DATE | Date Attribute | The date when the order was placed. | 2013-05-15 |
+| shipping_date | DATE | Date Attribute | The date when the order was shipped to the customer. | 2013-05-17 |
+| due_date | DATE | Date Attribute | The date when the order payment was due. | 2013-06-14 |
+| sales_amount | INT | Measure | The total monetary value of the sale for the line item, in whole currency units (e.g., 25). | 25 |
+| quantity | INT | Measure | The number of units of the product ordered for the line item (e.g., 1). | 1 |
+| price | INT | Measure | The price per unit of the product for the line item, in whole currency units (e.g., 25). | 25 |
 
 ---
 
