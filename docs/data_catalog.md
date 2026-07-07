@@ -15,7 +15,7 @@ The Gold Layer consists of:
 ---
 ## Gold Layer Star Schema
 
-<img width="1280" height="857" alt="image" src="https://github.com/user-attachments/assets/e595c27e-ca7a-4d60-91ea-9e973837d404" />
+<img width="2288" height="1376" alt="image" src="https://github.com/user-attachments/assets/ee96b2a9-1826-44d2-88e7-d9fff8d4451a" />
 
 **Figure 1:** Star Schema for the Gold Layer. The **fact_sales** table is located at the center and is connected to the **dim_customers** and **dim_products** dimension tables using surrogate keys through one-to-many relationships.
 
