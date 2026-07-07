@@ -97,8 +97,8 @@ The **Product Dimension** contains descriptive information about products, inclu
 | product_key | INT | Primary Key (Surrogate Key) | Surrogate key uniquely identifying each product record in the product dimension table. | - |
 | product_id | INT | Business Key | A unique identifier assigned to the product for internal tracking and referencing. | 310 |
 | product_number | NVARCHAR(50) | Business Attribute | A structured alphanumeric code representing the product, often used for categorization or inventory. | BK-M82B-42 |
-| product_name | NVARCHAR(50) | Attribute | Descriptive name of the product, including key details such as type, color, and size. | Mountain Bike Black 42 |
-| category_id | NVARCHAR(50) | Business Attribute | A unique identifier for the product's category, linking to its high-level classification. | BI |
+| product_name | NVARCHAR(50) | Attribute | Descriptive name of the product, including key details such as type, color, and size. | Mountain-100 Black- 48 |
+| category_id | NVARCHAR(50) | Business Attribute | A unique identifier for the product's category, linking to its high-level classification. | BI_MB |
 | category | NVARCHAR(50) | Attribute | The broader classification of the product (e.g., Bikes, Components) to group related items. | Bikes |
 | subcategory | NVARCHAR(50) | Attribute | A more detailed classification of the product within the category, such as product type. | Mountain Bikes |
 | maintenance_required | NVARCHAR(50) | Attribute | Indicates whether the product requires maintenance (e.g., 'Yes', 'No'). | Yes |
