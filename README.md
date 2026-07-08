@@ -52,29 +52,15 @@ The primary objectives of this project are:
 ---
 # 🏛️ Data Warehouse Architecture
 
-There are several architectural approaches for building analytical data platforms, each designed to address different business requirements and data processing needs.
+Modern analytical platforms can be designed using different architectural approaches, each addressing specific business requirements and data processing needs.
 
-The following diagram illustrates the most common modern data architectures, including Data Warehouse, Data Lake, and Data Lakehouse.
+The following diagram provides an overview of the most common modern data architectures, including **Data Warehouse**, **Data Lake**, **Data Lakehouse**, and **Data Mesh**. It also presents the primary methodologies used in Data Warehouse design, such as **Kimball**, **Inmon**, **Data Vault**, and **Medallion**.
+
+The architecture and methodology adopted in this project are highlighted in the diagram, providing context before presenting the project's architecture and implementation in the following sections.
 
 <p align="center">
- <img width="1996" height="1842" alt="image" src="https://github.com/user-attachments/assets/862e89ce-07bb-4188-8694-9de980fec43e" />
+<img width="1818" height="1698" alt="image" src="https://github.com/user-attachments/assets/6e55cb1e-e148-494a-8aa4-60bac30b3732" />
 </p>
-
----
-
-## Data Warehouse Architecture Patterns
-
-Several architectural methodologies are commonly used when designing a Data Warehouse.
-
-The following diagram compares the most popular approaches.
-
-The project adopts the **Medallion Architecture**, which organizes data into three logical layers:
-
-- Bronze Layer
-- Silver Layer
-- Gold Layer
-
-This architecture was selected because it provides a clear separation of responsibilities between raw, cleansed, and business-ready data while improving scalability, maintainability, and data quality.
 
 ---
 # 🏗 Project High-Level Architecture
@@ -261,13 +247,7 @@ It defines the relationships between CRM and ERP datasets and demonstrates how c
 
 ---
 
-# 🧩 Business Objects
-
-The Gold Layer is organized into business-oriented objects that transform technical source tables into meaningful business entities for analytics.
-
----
-
-## Business Object Mapping
+# 🧩 Business Object Mapping 
 
 Before building the dimensional model, source tables are mapped to their corresponding business objects. This mapping defines the business role of each source table and establishes the foundation for the analytical model.
 
@@ -286,7 +266,7 @@ The mapping process helps to:
 
 # 🧩 Business Objects
 
-The Gold Layer is built around three core business objects that represent the main business entities used for analytics. Each business object is created by integrating data from multiple source systems and applying business transformation rules.
+The Gold Layer is built around three core business objects that represent the main business entities used for analytics. Each business object is created by integrating data from the CRM and ERP source systems and applying business transformation rules.
 
 ---
 
