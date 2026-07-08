@@ -360,22 +360,26 @@ The final analytical model is implemented as a **Star Schema**, consisting of a 
 - `dim_products`
 
 The Star Schema simplifies analytical queries, improves query performance, and provides an intuitive structure for reporting and business intelligence.
----
-#data quality
+
 ---
 
+#data quality
+
+---
 # 📚 Project Documentation
 
-The project includes comprehensive documentation.
-├── Architecture
-├── Workflow
-├── Data Lineage
-├── Integration Model
-├── Business Objects
-├── Star Schema
-├── Data Catalog
-├── Naming Conventions
-└── Data Quality
+The project includes comprehensive documentation:
+
+**├── Architecture**  
+**├── Workflow**  
+**├── Data Lineage**  
+**├── Integration Model**  
+**├── Business Objects**  
+**├── Star Schema**  
+**├── Data Catalog**  
+**├── Naming Conventions**  
+**└── Data Quality**
+
 ---
 
 # 💻 Technologies
@@ -395,7 +399,7 @@ The project includes comprehensive documentation.
 # 📁 Project Structure
 
 ---
-# Author
-🦅 **Shatha Khaled**
----
-## ⭐ If you found this project useful, consider giving it a Star ^ـ^
+
+# 🦅 Author
+
+  Shatha Khaled ^ـ^ 
