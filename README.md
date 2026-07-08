@@ -370,15 +370,18 @@ The Star Schema simplifies analytical queries, improves query performance, and p
 
 The project includes comprehensive documentation:
 
-**├── Architecture**  
-**├── Workflow**  
-**├── Data Lineage**  
-**├── Integration Model**  
-**├── Business Objects**  
-**├── Star Schema**  
-**├── Data Catalog**  
-**├── Naming Conventions**  
-**└── Data Quality**
+| Document | Description |
+|----------|-------------|
+| High-Level Architecture | Overall architecture of the Data Warehouse solution. |
+| Data Warehouse Development Workflow | Development lifecycle across Bronze, Silver, and Gold layers. |
+| Data Lineage | End-to-end data flow from source systems to analytical models. |
+| Integration Model | Integration of CRM and ERP datasets into unified business entities. |
+| Business Object Mapping | Maps source tables to business objects. |
+| Business Objects | Customer, Product, and Sales transformation logic. |
+| Star Schema | Dimensional model of the Sales Data Mart. |
+| Data Catalog | Business metadata and column descriptions. |
+| Naming Conventions | Standards for naming schemas, tables, columns, and SQL objects. |
+| Data Quality | Validation rules and quality checks implemented throughout the project. |
 
 ---
 
