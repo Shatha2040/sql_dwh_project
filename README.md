@@ -127,17 +127,18 @@ The Data Warehouse integrates data from two independent operational systems, eac
 
 The CRM (Customer Relationship Management) system provides operational business data, including:
 
-- Customer information
-- Product information
-- Sales transactions
+- `cust_info.csv` — Customer information
+- `prd_info.csv` — Current & History Product Infromation
+- `sales_details.csv` — Transactional Records about Sales & Orders
 
 ## ERP System
 
 The ERP (Enterprise Resource Planning) system provides enterprise reference data, including:
 
-- Customer demographics
-- Product categories
-- Location information
+- `CUST_AZ12.csv` — Extra Customer Information (Birthdate)
+- `LOC_A101.csv` — Location of Customers (Country)
+- `PX_CAT_G1V2.csv` — Product categories 
+
 
 These source systems are integrated through the ETL pipeline to produce a unified analytical model.
 
