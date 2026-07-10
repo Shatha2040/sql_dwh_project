@@ -346,24 +346,38 @@ The Star Schema simplifies analytical queries, improves query performance, and p
 
 ## 🛡️ Data Quality
 
-Data Quality is a critical stage within the **Medallion Architecture**, where a set of validation rules was implemented in the **Silver Layer** to ensure that data is accurate, consistent, reliable, and ready for analytical modeling before moving into the **Gold Layer**.
+Data Quality is a critical stage within the **Medallion Architecture**, where multiple validation rules are implemented in the **Silver Layer** to ensure that data is accurate, consistent, reliable, and ready for analytical modeling before moving into the **Gold Layer**.
 
-### Data Quality Logic: Date Validation and Correction
+### Data Quality Checks
 
-One of the main data quality challenges encountered was handling inconsistent date ranges, especially records containing invalid relationships between **Start Date** and **End Date**.
+The implemented data quality checks cover several validation dimensions:
 
-Some records contained issues such as:
+- **Duplicate Detection:** Identify and handle duplicated records.
+- **Missing Value Handling:** Manage incomplete or missing attributes.
+- **Data Standardization:** Ensure consistent formats and values across datasets.
+- **Data Type Validation:** Verify that columns contain the correct data types.
+- **Consistency Validation:** Ensure relationships between attributes remain logically correct.
+- **Date Validation:** Detect and correct invalid date relationships.
+
+---
+
+## Example: Date Validation and Correction
+
+One of the main data quality challenges identified during the transformation process was handling inconsistent date relationships.
+
+Some records contained date-related issues such as:
 
 - Start dates occurring after end dates.
-- Overlapping or inconsistent date ranges.
-- Invalid date values that could affect analytical accuracy.
+- Invalid or inconsistent date values.
+- Date relationships that could impact analytical accuracy.
 
-To address these issues, validation rules were applied to identify problematic records, evaluate date relationships, and apply the appropriate correction strategy while maintaining data consistency and reliability.
+To address these issues, validation rules were applied to detect incorrect date relationships, evaluate data consistency, and apply appropriate correction strategies while maintaining data reliability.
 
-The following diagram illustrates the implemented approach for detecting and handling date-related data quality issues before loading the data into the analytical layers.
+The following diagram illustrates the implemented approach for identifying and handling date-related data quality issues before loading the data into the analytical layers.
 
+<p align="center">
 <img width="2422" height="1534" alt="image" src="https://github.com/user-attachments/assets/f80d86d5-3d5e-4ffc-af9e-b13d3a7dac7f" />
-
+</p>
 
 ---
 # 📚 Project Documentation
