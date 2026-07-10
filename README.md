@@ -456,7 +456,7 @@ Data Warehouse Project
 │   └── gold_layer_quality_checks.sql
 │
 └── 📄 README.md
-...
+
 ```
 
 ---
