@@ -344,7 +344,26 @@ The Star Schema simplifies analytical queries, improves query performance, and p
 
 ---
 
-#data quality
+## 🛡️ Data Quality
+
+Data Quality is a critical stage within the **Medallion Architecture**, where a set of validation rules was implemented in the **Silver Layer** to ensure that data is accurate, consistent, reliable, and ready for analytical modeling before moving into the **Gold Layer**.
+
+### Data Quality Logic: Date Validation and Correction
+
+One of the main data quality challenges encountered was handling inconsistent date ranges, especially records containing invalid relationships between **Start Date** and **End Date**.
+
+Some records contained issues such as:
+
+- Start dates occurring after end dates.
+- Overlapping or inconsistent date ranges.
+- Invalid date values that could affect analytical accuracy.
+
+To address these issues, validation rules were applied to identify problematic records, evaluate date relationships, and apply the appropriate correction strategy while maintaining data consistency and reliability.
+
+The following diagram illustrates the implemented approach for detecting and handling date-related data quality issues before loading the data into the analytical layers.
+
+<img width="2422" height="1534" alt="image" src="https://github.com/user-attachments/assets/f80d86d5-3d5e-4ffc-af9e-b13d3a7dac7f" />
+
 
 ---
 # 📚 Project Documentation
