@@ -373,7 +373,7 @@ Some records contained date-related issues such as:
 
 To address these issues, validation rules were applied to detect incorrect date relationships, evaluate data consistency, and apply appropriate correction strategies while maintaining data reliability.
 
-The following diagram illustrates the implemented approach for identifying and handling date-related data quality issues before loading the data into the analytical layers.
+The following diagram illustrates the implemented approach for identifying and handling date-related data quality issues before loading the data into the analytical layers (Gold Layer).
 
 <p align="center">
 <img width="2422" height="1534" alt="image" src="https://github.com/user-attachments/assets/f80d86d5-3d5e-4ffc-af9e-b13d3a7dac7f" />
