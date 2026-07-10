@@ -395,7 +395,6 @@ The project includes comprehensive documentation:
 | Star Schema | Dimensional model of the Sales Data Mart. |
 | Data Catalog | Business metadata and column descriptions. |
 | Naming Conventions | Standards for naming schemas, tables, columns, and SQL objects. |
-| Data Quality | Validation rules and quality checks implemented throughout the project. |
 
 ---
 
