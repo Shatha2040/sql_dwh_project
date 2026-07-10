@@ -23,8 +23,8 @@
 - [Sales Data Mart (Star Schema)](#-sales-data-mart-star-schema)
 - [Data Quality](#-data-quality)
 - [Documentation](#-documentation)
-- [Project Structure](#-project-structure)
 - [Technologies](#-technologies)
+- [Project Structure](#-project-structure)
 ---
 
 # 📌 Project Overview
