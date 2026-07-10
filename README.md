@@ -380,7 +380,7 @@ The following diagram illustrates the implemented approach for identifying and r
 </p>
 
 ---
-# 📚 Project Documentation
+## 📚 Project Documentation
 
 The project includes comprehensive documentation:
 
@@ -398,7 +398,7 @@ The project includes comprehensive documentation:
 
 ---
 
-# 💻 Technologies
+##  💻 Technologies
 
 | Category | Technology |
 |-----------|------------|
@@ -412,10 +412,55 @@ The project includes comprehensive documentation:
 
 ---
 
-# 📁 Project Structure
+## 📂 Project Structure
+
+```text
+Data Warehouse Project
+│
+├── 📂 datasets
+│   ├── 📂 source_crm
+│   │   ├── cust_info.csv
+│   │   ├── prd_info.csv
+│   │   └── sales_details.csv
+│   │
+│   └── 📂 source_erp
+│       ├── CUST_AZ12.csv
+│       ├── LOC_A101.csv
+│       └── PX_CAT_G1V2.csv
+│
+├── 📂 docs
+│   ├── Business_Object_Mapping.png
+│   ├── Business_Objects.png
+│   ├── Data_Lineage_Diagram.png
+│   ├── Data_Warehouse_Architecture.png
+│   ├── High_Level_Architecture.png
+│   ├── data_catalog.md
+│   └── naming_conventions.md
+│
+├── 📂 scripts
+│   ├── init_data_warehouse.sql
+│   │
+│   ├── 📂 bronze_layer
+│   │   ├── bronze_layer_ddl.sql
+│   │   └── bronze_layer_proc_load.sql
+│   │
+│   ├── 📂 silver_layer
+│   │   ├── silver_layer_ddl.sql
+│   │   └── silver_layer_proc_load.sql
+│   │
+│   └── 📂 gold_layer
+│       └── gold_layer_ddl.sql
+│
+├── 📂 tests
+│   ├── silver_layer_quality_checks.sql
+│   └── gold_layer_quality_checks.sql
+│
+└── 📄 README.md
+...
+```
 
 ---
 
-# 🦅 Author
+## 🦅 Author
 
   Shatha Khaled ^ـ^ 
