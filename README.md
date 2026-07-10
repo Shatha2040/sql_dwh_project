@@ -414,7 +414,7 @@ The project includes comprehensive documentation:
 
 ## 📂 Project Structure
 
-```text
+```
 Data Warehouse Project
 │
 ├── 📂 datasets
