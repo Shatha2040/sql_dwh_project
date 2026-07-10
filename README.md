@@ -13,7 +13,7 @@
 - [Project Overview](#-project-overview)
 - [Objectives](#-objectives)
 - [High-Level Architecture](#-high-level-architecture)
-- [Data Warehouse Development Workflow](#️-data-warehouse-development-workflow)
+- [Data Warehouse Implementation Workflow](#️-data-warehouse-implementation-workflow)
 - [Data Lineage](#-data-lineage)
 - [Source Systems](#-source-systems)
 - [Bronze Layer](#-bronze-layer)
@@ -48,16 +48,16 @@ The primary objectives of this project are:
 - Implement business rules.
 - Build a dimensional model using Star Schema.
 - Generate analytics-ready datasets.
-- Document every stage of the development lifecycle.
+- Document every stage of the implementation lifecycle.
 
 ---
 # 🏛️ Data Warehouse Architecture
 
 Modern analytical platforms can be designed using different architectural approaches, each addressing specific business requirements and data processing needs.
 
-The following diagram provides an overview of the most common modern data architectures, including **Data Warehouse**, **Data Lake**, **Data Lakehouse**, and **Data Mesh**. It also presents the primary methodologies used in Data Warehouse design, such as **Kimball**, **Inmon**, **Data Vault**, and **Medallion**.
+The following diagram provides an overview of the most common modern data architectures, including **Data Warehouse**, **Data Lake**, **Data Lakehouse**, and **Data Mesh**. It also presents common Data Warehouse design approaches, such as **Kimball**, **Inmon**, **Data Vault**, and **Medallion Architecture**.
 
-The architecture and methodology adopted in this project are highlighted in the diagram, providing context before presenting the project's architecture and implementation in the following sections.
+The architecture and approach adopted in this project are highlighted in the diagram, providing context before presenting the project's architecture and implementation in the following sections.
 
 <p align="center">
 <img width="1818" height="1698" alt="image" src="https://github.com/user-attachments/assets/6e55cb1e-e148-494a-8aa4-60bac30b3732" />
@@ -82,9 +82,9 @@ The project follows the **Medallion Architecture**, organizing data into three l
 
 ---
 
-# ⚙️ Data Warehouse Development Workflow
+# ⚙️ Data Warehouse Implementation Workflow
 
-Building the Data Warehouse followed a structured development process across each Medallion layer. Every stage includes analysis, implementation, validation, and documentation to ensure high-quality and reliable data delivery.
+Building the Data Warehouse followed a structured process across each Medallion layer. Every stage includes analysis, implementation, validation, and documentation to ensure high-quality and reliable data delivery.
 
 <p align="center">
  <img width="1214" height="1500" alt="image" src="https://github.com/user-attachments/assets/798976b1-7089-418d-b425-6ace2731936a" />
@@ -172,7 +172,7 @@ The Bronze Layer serves as the landing zone for all source data. Data is loaded 
 
 # 🥈 Silver Layer
 
-The Silver Layer transforms raw data into clean, standardized, and validated datasets suitable for analytical modeling.
+The Silver Layer transforms raw data into clean, standardized, and validated datasets suitable for downstream analytical modeling.
 
 ## Purpose
 
@@ -373,7 +373,7 @@ Some records contained date-related issues such as:
 
 To address these issues, validation rules were applied to detect incorrect date relationships, evaluate data consistency, and apply appropriate correction strategies while maintaining data reliability.
 
-The following diagram illustrates the implemented approach for identifying and handling date-related data quality issues before loading the data into the analytical layers (Gold Layer).
+The following diagram illustrates the implemented approach for identifying and resolving date-related data quality issues in the Silver Layer before loading the validated data into the Gold Layer.
 
 <p align="center">
 <img width="2422" height="1534" alt="image" src="https://github.com/user-attachments/assets/f80d86d5-3d5e-4ffc-af9e-b13d3a7dac7f" />
@@ -387,7 +387,7 @@ The project includes comprehensive documentation:
 | Document | Description |
 |----------|-------------|
 | High-Level Architecture | Overall architecture of the Data Warehouse solution. |
-| Data Warehouse Development Workflow | Development lifecycle across Bronze, Silver, and Gold layers. |
+| Data Warehouse Implementation Workflow | Implementation lifecycle across Bronze, Silver, and Gold layers. |
 | Data Lineage | End-to-end data flow from source systems to analytical models. |
 | Integration Model | Integration of CRM and ERP datasets into unified business entities. |
 | Business Object Mapping | Maps source tables to business objects. |
