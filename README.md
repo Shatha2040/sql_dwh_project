@@ -413,7 +413,7 @@ The project includes comprehensive documentation:
 
 ---
 
-## 📂 Project Structure
+## 📂 Repository Structure
 
 ```
 Data Warehouse Project
